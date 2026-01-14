@@ -7,9 +7,15 @@
 function stringSum(str) {
   console.log(str);
   // find the digits
-  const regex = /([\d]*)/g;
-  const arr = str.matchAll(str);
+  // run through the string, capturing the digits into an array
+  const regex = /[\d]+/g;
+  // const arr = str.matchAll(str)
+  // const arr = str.split(str)
+  const arr = str.match(regex);
   console.log(arr);
 
-  return str;
+  // total arr
+  const total = arr.reduce((a, b) => Number.parseInt(a) + Number.parseInt(b));
+  console.log(total);
+  return total;
 }
